@@ -1,0 +1,26 @@
+version: "2.4"
+
+services:
+  nginx:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - client
+      - graphql
+  client:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes:
+      - ./client:/app
+    depends_on:
+      - graphql
+  graphql:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./graphql
+    volumes:
+      - ./graphql:/app

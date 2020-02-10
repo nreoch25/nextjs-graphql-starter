@@ -1,0 +1,13 @@
+{
+  "name": "nextjs-graphql-starter",
+  "description": "Boilerplate for NextJS client with a GraphQL backend using Apollo Client and Apollo Server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"cd graphql && yarn dev\" \"cd client && yarn dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
